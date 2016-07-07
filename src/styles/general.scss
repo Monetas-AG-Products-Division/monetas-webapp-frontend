@@ -1,0 +1,34 @@
+.dashboard.scroll-content {
+	display: table !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+.dashboard .scroll {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.footer-bar-custom {
+    width: 100%;
+    border: 0px;
+    position: absolute;
+    bottom: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 5;
+    background-image: none;
+}
+
+.footer-bar-custom .item-center {
+    position: absolute;
+    width: 80%;
+}
+
+.footer-bar-custom .item-left { left: 10px }
+
+.footer-bar-custom .item-center {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}

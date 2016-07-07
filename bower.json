@@ -1,0 +1,11 @@
+{
+  "name": "Monetas",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4",
+    "angular-mocks": "~1.4.3"
+  },
+  "dependencies": {
+    "angular-messages": "^1.5.7"
+  }
+}
