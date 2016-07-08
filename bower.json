@@ -6,6 +6,7 @@
     "angular-mocks": "~1.4.3"
   },
   "dependencies": {
-    "angular-messages": "^1.5.7"
+    "angular-messages": "^1.5.7",
+    "bourbon": "^4.2.7"
   }
 }

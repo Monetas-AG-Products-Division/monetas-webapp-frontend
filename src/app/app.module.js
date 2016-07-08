@@ -8,6 +8,11 @@
         'app.core',
 
         /* Feature areas */
-        'app.dash'
+        'app.dash',
+        'app.signup',
+        'app.login',
+        'app.account',
+        'app.settings',
+        'app.balance'
     ]);
 })();

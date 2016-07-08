@@ -20,4 +20,23 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "src/lib/ionic/scss/ionic";
 
+// Include Bourbon
+@import "src/lib/bourbon/app/assets/stylesheets/_bourbon";
+
 @import "general";
+
+// Include Sass mixins
+@import "utils/mixins";
+
+// Include Ionic override variables
+@import "utils/override_variables";
+
+// Include project Sass variables
+@import "common/common.variables";
+@import "auth/auth.variables";
+
+// Include custom styles
+@import "common/common.styles";
+@import "auth/welcome.styles";
+@import "auth/auth.styles";
+@import "app/app.styles";
