@@ -1,0 +1,16 @@
+<ion-view view-title="Home">
+    <ion-content class="padding dashboard">
+        <div class="card top-50-minus">
+            <div class="item item-text-wrap">
+                <h3>YOUR BALANCE</h3>
+                <h2 class="balance">
+                    <span class="currency">{{ vm.balance.currency }}</span> 
+                    {{ vm.balance.amount | number:0 }}
+                </h2>
+                <a class="button button-clear button-border button-assertive" ui-sref="login">
+                    BALANCE HISTORY
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

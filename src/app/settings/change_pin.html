@@ -1,0 +1,31 @@
+<ion-view class="auth-view" cache-view="false" view-title="Secured PIN">
+  <ion-nav-bar class="view-navigation">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <form name="settings_form" class="" novalidate>
+    <ion-content class="padding">
+      <div class="row form-wrapper">
+        <div class="col">
+          <p>
+            <strong>IMPORTANT</strong>: 
+            If you lose your PIN, your account cannot be recovered.
+          </p>
+          <div class="list">
+            <label class="item item-input">
+              <div class="input-label">PIN</div>
+              <input type="password" name="pin" ng-model="user.pin" required>
+            </label>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+    <div class="footer-bar-custom">
+      <div class="item-center">
+        <button type="submit" class="button button-block button-assertive" ng-click="vm.doBalance()" ng-disabled="settings_form.$invalid">
+        I HAVE SECURED THE PIN
+        </button>
+      </div>
+    </div>
+  </form>
+</ion-view>

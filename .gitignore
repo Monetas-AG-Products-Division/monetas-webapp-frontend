@@ -3,11 +3,6 @@
 
 .DS_Store
 
-src/app/*
-!src/app/dash
-!src/app/layout
-!src/app/app.*
-
 src/images/*
 !src/images/logo.png
 !src/images/sign_canvas.png

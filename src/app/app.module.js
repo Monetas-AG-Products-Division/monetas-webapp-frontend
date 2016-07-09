@@ -5,14 +5,15 @@
     .module('app', [
         /* Shared modules */
         'ionic',
+        'ja.qr',
         'app.core',
 
         /* Feature areas */
         'app.dash',
         'app.signup',
         'app.login',
-        'app.account',
         'app.settings',
-        'app.balance'
+        'app.balance',
+        'app.contact-information'
     ]);
 })();
