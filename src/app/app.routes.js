@@ -18,8 +18,13 @@
             url: '/tab',
             abstract: true,
             templateUrl: 'app/layout/tabs.html'
-        });
+        })
 
+        .state('tab-view', {
+            url: '/tab-view',
+            abstract: true,
+            templateUrl: 'app/layout/tabs-view.html'
+        })
         // Each tab has its own nav history stack which is defined in the corresponding module.
 
         // if none of the above states are matched, use this as the fallback

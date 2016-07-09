@@ -28,3 +28,25 @@
 .top-50 {
     padding-top:50px !important;
 }
+
+.top-50-minus {
+    margin-top:-50px !important;
+}
+
+.balance {
+    padding-top:20px;
+    padding-bottom: 25px;
+    color: $assertive;
+    font-size: 32px !important;
+}
+
+.balance .currency {
+    font-size: 20px !important;
+}
+
+.button-border {
+    border: 2px solid $assertive !important;
+    border-radius: 25px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
