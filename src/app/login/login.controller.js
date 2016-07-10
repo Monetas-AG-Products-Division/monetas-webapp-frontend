@@ -16,7 +16,7 @@
 
         ////////////////
         function doLogIn() {
-            $state.go('tab-view.contact-information');
+            $state.go('tab-view.balance');
         };
 
         function activate() {

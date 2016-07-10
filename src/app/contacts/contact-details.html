@@ -1,0 +1,17 @@
+<ion-view view-title="{{ vm.contact.id >= 0 ? '' : '' }}" cache-view="false">
+    <ion-content class="padding">
+        <form name="contact_edit_form" class="" novalidate>
+        <div class="list">
+            <label class="item item-input">
+                <div class="input-label">Contact name</div>
+                <input type="text" name="name" ng-model="vm.contact.name" required>
+            </label>
+        </div>
+        </form>
+        <div class="item-center">
+            <button type="submit" class="button button-block button-assertive" ng-click="vm.doSave()" ng-disabled="contact_edit_form.$invalid">
+                {{ vm.contact.id >= 0 ? 'SAVE' : 'CREATE' }}
+            </button>
+        </div>        
+    </ion-content>
+</ion-view>

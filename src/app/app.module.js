@@ -6,6 +6,7 @@
         /* Shared modules */
         'ionic',
         'ja.qr',
+        'ionic-letter-avatar',
         'app.core',
 
         /* Feature areas */
@@ -14,6 +15,7 @@
         'app.login',
         'app.settings',
         'app.balance',
-        'app.contact-information'
+        'app.contact-information',
+        'app.contacts'
     ]);
 })();
