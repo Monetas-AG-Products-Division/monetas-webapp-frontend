@@ -1,6 +1,6 @@
 {
     "name": "Monetas",
-    "version": "0.1",
+    "version": "1.0",
     "description": "Monetas description",
     "dependencies": {
         "gulp": "^3.9.0"
