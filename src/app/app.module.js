@@ -15,6 +15,7 @@
         'app.login',
         'app.settings',
         'app.balance',
+        'app.balance-history',
         'app.contact-information',
         'app.contacts'
     ]);

@@ -91,3 +91,93 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4) !important;
     background: darken($assertive, 10%) !important;
 }
+
+.icon-circle, .icon-circle-large, .icon-circle-small{
+  position: relative;
+  display: inline-block;
+  margin: -1px;
+  /*padding: 16px;*/
+  
+  
+  width: 45px; /* 60*/
+    height: 45px; 
+  font-size:40px; 
+  
+   -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+    border-radius: 50%;
+  
+    
+  
+  border: 1px solid #ebebeb;
+ 
+  background: rgb(0, 161, 225); /*#ececec;ebebeb*/
+  color: #fff;
+  
+  text-align:center;
+  /*vertical-align: middle;*/
+}
+
+.icon-circle-large {
+  width: 100px;
+  height: 100px;
+  font-size: 64px; /* 64, originally 60 */
+  padding: 16px;
+  
+  
+}
+.icon-circle-small {
+  width: 24px;
+  height: 24px;
+  font-size: 20px;
+}
+
+
+.icon-circle-outline {
+   border: 1px solid rgb(0, 161, 225);
+   background: transparent;
+  color: rgb(0, 161, 225);
+   /*color: #8a6de9;*/
+}
+
+.icon-circle-outline i {  }
+/*icon-circle-bg and icon-circle and circle-bg*/
+
+
+
+.item-icon-circle {
+   -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px; 
+  /* width and height can be anything, as long as they're equal */
+  
+  text-align:center;
+  color:white;
+  /* font size here wont work */
+
+}
+
+.item-icon-circle i {
+  /*text-align:center;
+  color:white;*/
+   /*margin: 0px auto;
+  padding: 0px;
+  display:block;*/
+  font-size:60px;
+}
+
+.bg-circle-alt {
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px; 
+}
+
+
+
+
+
+

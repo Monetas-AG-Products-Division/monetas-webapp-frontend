@@ -1,0 +1,23 @@
+<ion-view view-title="Balance History" cache-view="false">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in vm.history | orderBy : '+createdAt' " type="item-text-wrap">
+                <ionic-letter-avatar data="-" shape="round" charcount="1"></ionic-letter-avatar>
+                <div class="row">
+                    <div class="col col-75">
+                        <h2>{{item.contact.name}}</h2>
+                        <p>{{item.createdAt}}</p>
+                    </div>
+                    <div class="col text-right  col-50">
+                        <h2>{{item.currency}} {{item.amount}}</h2>
+                        <p>{{item.status}}</p>
+                    </div>
+                </div>
+
+                <ion-option-button class="button-assertive" ng-click="vm.remove(item)">
+                    Delete
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
