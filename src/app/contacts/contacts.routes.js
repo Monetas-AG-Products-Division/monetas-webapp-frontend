@@ -10,24 +10,19 @@
     function routes($stateProvider) {
         $stateProvider
 
-        .state('tab-view.contacts', {
+        .state('contacts', {
             url: '/contacts',
-            views: {
-                'menuContent': {
-                    templateUrl: 'app/contacts/contacts.html',
-                    controller: 'ContactsController as vm'
-                }
-            }
+            templateUrl: 'app/contacts/contacts.html',
+            controller: 'ContactsController as vm'
         })
 
-        .state('tab-view.contact-details', {
-            url: '/contacts/:contactId',
-            views: {
-                'menuContent': {
-                    templateUrl: 'app/contacts/contact-details.html',
-                    controller: 'ContactDetailsController as vm'
-                }
-            }
+        .state('contact-details', {
+            url: '/contact-details',
+            params: {
+              contact: null
+            },
+            templateUrl: 'app/contacts/contact-details.html',
+            controller: 'ContactDetailsController as vm'
         });
 
     }

@@ -3,77 +3,40 @@
 
     angular
     .module('app.contacts')
-    .factory('ContactsService', contactsService);
+    .factory('ContactService', contactService);
 
-    contactsService.$inject = [];
-
-    // Some fake testing data
-    var contacts = [
-        {
-            id: 0,
-            name: 'Ben Sparrow'
-        }, {
-            id: 1,
-            name: 'Max Lynx'
-        }, {
-            id: 2,
-            name: 'Adam Bradleyson'
-        }, {
-            id: 3,
-            name: 'Perry Governor'
-        }, {
-            id: 4,
-            name: 'Mike Harrington'
-        }
-    ];
+    contactService.$inject = ['$http','BACKEND_CONFIG'];
 
     /* @ngInject */
-    function contactsService() {
+    function contactService($http, BACKEND_CONFIG) {
         var service = {
-            all: all,
+            getAll: getAll,
             remove: remove,
-            edit: edit,
-            add: add,
-            get: get
+            add: add
         };
         return service;
 
         ////////////////
 
-        function all() {
-            // Might use a resource here that returns a JSON array
-            return contacts;
+        function getAll(cb) {
+            $http.get(BACKEND_CONFIG.url + '/api/contacts')
+            .success(function (data, status, headers, config) {
+                cb(data);
+            });
         }
 
-        function add(name) {
-            var _id = 0;
-            if (contacts.length > 0) {
-                _id = contacts[contacts.length - 1].id + 1;
-            };
-
-            contacts.push({ id: _id, name: name });
+        function add(data, cb) {
+            $http.post(BACKEND_CONFIG.url + '/api/contacts', data)
+            .success(function (data, status, headers, config) {
+                cb(data);
+            });
         }
 
-        function remove(contact) {
-            contacts.splice(contacts.indexOf(contact), 1);
-        }
-
-        function get(contactId) {
-            for (var i = 0; i < contacts.length; i++) {
-                if (contacts[i].id === parseInt(contactId)) {
-                    return contacts[i];
-                }
-            }
-            return null;
-        }
-
-        function edit(contact) {
-            for (var i = 0; i < contacts.length; i++) {
-                if (contacts[i].id === parseInt(contact.id)) {
-                    contacts[i].name = contact.name;
-                }
-            }
-            return null;
+        function remove(item, cb) {
+            $http.delete(BACKEND_CONFIG.url + '/api/contacts/'+item._id)
+            .success(function (data, status, headers, config) {
+                cb(data);
+            });
         }
 
     }

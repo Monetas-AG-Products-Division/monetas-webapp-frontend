@@ -5,17 +5,19 @@
     .module('app.balance')
     .controller('BalanceController', BalanceController);
 
-    BalanceController.$inject = ['$state', '$ionicTabsDelegate'];
+    BalanceController.$inject = ['$state', '$ionicTabsDelegate', 'ProfileService'];
 
     /* @ngInject */
-    function BalanceController($state, $ionicTabsDelegate) {
+    function BalanceController($state, $ionicTabsDelegate, ProfileService) {
         var vm = this;
-        vm.balance = {
-            amount: 2032,
-            currency: 'USD'
-        };
-
-        vm.title = '123';
+        
+        /*
+          will be replaced by model factory in next release
+        */
+        ProfileService.getBalance(function(data) {
+            console.log(data);
+            vm.balance = data.result;
+        });
 
         activate();
 

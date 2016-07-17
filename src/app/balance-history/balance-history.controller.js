@@ -5,10 +5,10 @@
     .module('app.balance-history')
     .controller('BalanceHistoryController', BalanceHistoryController);
 
-    BalanceHistoryController.$inject = ['BalanceHistoryService'];
+    BalanceHistoryController.$inject = ['TransferService'];
 
     /* @ngInject */
-    function BalanceHistoryController(BalanceHistoryService) {
+    function BalanceHistoryController(TransferService) {
         var vm = this;
         vm.history = [];
         vm.remove = remove;
@@ -19,11 +19,16 @@
 
 
         function activate() {
-            vm.history = BalanceHistoryService.all();
+            TransferService.getAll(function(data) {
+                console.log(data);
+                vm.history = data.result;
+            });
         }
 
         function remove(transaction) {
-            BalanceHistoryService.remove(transaction);
+            TransferService.remove(transaction, function(data) {
+                activate();         
+            });
         }
     }
 })();

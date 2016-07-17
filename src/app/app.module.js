@@ -7,6 +7,8 @@
         'ionic',
         'ja.qr',
         'ionic-letter-avatar',
+        'ionic-modal-select',
+        'ionic-toast',
         'app.core',
 
         /* Feature areas */
@@ -17,6 +19,7 @@
         'app.balance',
         'app.balance-history',
         'app.contact-information',
-        'app.contacts'
+        'app.contacts',
+        'app.send'
     ]);
 })();

@@ -11,11 +11,12 @@
     function ContactDetailsController($stateParams, ContactsService, $state) {
         var vm = this;
         vm.doSave = doSave;
-        console.log($stateParams.contactId);
-        if ($stateParams.contactId == 'new') {
-            vm.contact = { name: '' };
+        console.log($stateParams.contact);
+        var data = $stateParams.contact || { name: ''};
+        if (!data.id) {
+            vm.contact = data;
         } else {
-            vm.contact = ContactsService.get($stateParams.contactId);
+            vm.contact = ContactsService.get($stateParams.contact.id);
         }
 
         activate();

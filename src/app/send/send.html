@@ -1,0 +1,35 @@
+<ion-view class="auth-view" cache-view="false" view-title="Send a payment">
+  <ion-nav-bar class="view-navigation">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <form name="payment_form" class="" novalidate>
+    <ion-content class="padding">
+      <div class="row form-wrapper">
+        <div class="col">
+          <div class="list">
+            <label class="item item-input" modal-select ng-model="vm.payment.contact" options="vm.contacts" options-expression="option in vm.contacts | orderBy:'name'" modal-title="Select a Recipient" has-search="true">
+              <div class="input-label">Recipient</div>
+              <span>{{vm.payment.contact.name || 'click to select'}}</span>
+              <div class="option">
+                  {{option.name}}
+              </div>
+              <input type="hidden" name="name" ng-model="vm.payment.contact" required>
+            </label>
+            <label class="item item-input">
+              <div class="input-label">Pay, USD</div>
+              <input type="text" name="name" ng-model="vm.payment.amount" required>
+            </label>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+    <div class="footer-bar-custom">
+      <div class="item-center">
+        <button type="submit" class="button button-block button-assertive" ng-click="vm.doSend()" ng-disabled="payment_form.$invalid">
+        COMPLETE PAYMENT
+        </button>
+      </div>
+    </div>
+  </form>
+</ion-view>

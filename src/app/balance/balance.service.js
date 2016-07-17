@@ -2,12 +2,13 @@
     'use strict';
 
     angular
-    .module('app.balance-history')
-    .factory('BalanceHistoryService', balanceHistoryService);
+    .module('app.balance')
+    .factory('TransferService', transferService);
 
-    balanceHistoryService.$inject = [];
+    transferService.$inject = ['$http','BACKEND_CONFIG'];
 
     // Some fake testing data
+    /*
     var history = [
         {
             id: 0,
@@ -28,40 +29,14 @@
             contact: {
               name: 'Adam Brandleyson'
             }
-        }, {
-            id: 2,
-            createdAt: '24 July 2016',
-            currency: 'USD',
-            amount: 56,
-            status: 'pending',
-            contact: {
-              name: 'Ben Sparrow'
-            }
-        }, {
-            id: 3,
-            createdAt: '4 July 2016',
-            currency: 'USD',
-            amount: 29,
-            status: 'pending',
-            contact: {
-              name: 'Perry Governor'
-            }
-        }, {
-            id: 4,
-            createdAt: '1 July 2016',
-            currency: 'USD',
-            amount: 70,
-            status: 'completed',
-            contact: {
-              name: 'Max Lynx'
-            }
         }
     ];
+    */
 
     /* @ngInject */
-    function balanceHistoryService() {
+    function transferService($http, BACKEND_CONFIG) {
         var service = {
-            all: all,
+            getAll: getAll,
             remove: remove,
             add: add
         };
@@ -69,12 +44,20 @@
 
         ////////////////
 
-        function all() {
-            // Might use a resource here that returns a JSON array
-            return history;
+        function getAll(cb) {
+            $http.get(BACKEND_CONFIG.url + '/api/transfers')
+            .success(function (data, status, headers, config) {
+                cb(data);
+            });
         }
 
-        function add(data) {
+        function add(data, cb) {
+            $http.post(BACKEND_CONFIG.url + '/api/transfers', data)
+            .success(function (data, status, headers, config) {
+                cb(data);
+            });
+
+            /*
             var _id = 0;
             if (history.length > 0) {
                 _id = history[history.length - 1].id + 1;
@@ -84,13 +67,21 @@
             data.createdAt = '17 July 2016';
             data.status = 'completed';
             history.push(data);
+            */
         }
 
-        function remove(item) {
+        function remove(item, cb) {
+            $http.delete(BACKEND_CONFIG.url + '/api/transfers/'+item._id)
+            .success(function (data, status, headers, config) {
+                cb(data);
+            });
+
+            /*
             var idx = history.map(function(e) { return e.id; }).indexOf(item.id);
             if (idx != -1) {
                 history.splice(idx, 1);
             };
+            */
         }
 
     }

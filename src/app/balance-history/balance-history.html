@@ -1,12 +1,12 @@
 <ion-view view-title="Balance History" cache-view="false">
     <ion-content>
         <ion-list>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in vm.history | orderBy : '+createdAt' " type="item-text-wrap">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in vm.history | orderBy : '+createdAt' " type="item-text-wrap" ui-sref="contact-details({contact: item.contact })">
                 <ionic-letter-avatar data="-" shape="round" charcount="1"></ionic-letter-avatar>
                 <div class="row">
                     <div class="col col-75">
-                        <h2>{{item.contact.name}}</h2>
-                        <p>{{item.createdAt}}</p>
+                        <h2>{{item.recipient.info.name}}</h2>
+                        <p>{{item.createdAt | date}}</p>
                     </div>
                     <div class="col text-right  col-50">
                         <h2>{{item.currency}} {{item.amount}}</h2>
