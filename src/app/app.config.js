@@ -28,7 +28,7 @@
     .module('app')
     .config(configure)
     .constant('BACKEND_CONFIG', {
-        url: 'http://localhost:3000'
+        url: 'http://52.58.219.22'
     });
 
     configure.$inject = ['$httpProvider'];
