@@ -31,9 +31,9 @@
             })
             .error(function (data, status, headers, config) {
                 // Handle login errors here
-                alert('Something happend wrong :(');
+                console.log('Something happend wrong :(');
             });
-        };
+        }
 
         function activate() {
         }

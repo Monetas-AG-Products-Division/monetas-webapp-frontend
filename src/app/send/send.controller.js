@@ -5,7 +5,8 @@
     .module('app.send')
     .controller('SendController', SendController);
 
-    SendController.$inject = ['$state', '$ionicTabsDelegate', 'ContactsService', 'BalanceHistoryService', '$ionicPopup'];
+    SendController.$inject = ['$state', '$ionicTabsDelegate', 
+    'ContactsService', 'BalanceHistoryService', '$ionicPopup'];
 
     /* @ngInject */
     function SendController($state, $ionicTabsDelegate, ContactsService, BalanceHistoryService, $ionicPopup) {

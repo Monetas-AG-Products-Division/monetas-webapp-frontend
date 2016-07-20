@@ -78,7 +78,7 @@
             var _id = 0;
             if (history.length > 0) {
                 _id = history[history.length - 1].id + 1;
-            };
+            }
 
             data.id = _id;
             data.createdAt = '17 July 2016';
@@ -88,9 +88,9 @@
 
         function remove(item) {
             var idx = history.map(function(e) { return e.id; }).indexOf(item.id);
-            if (idx != -1) {
+            if (idx !== -1) {
                 history.splice(idx, 1);
-            };
+            }
         }
 
     }

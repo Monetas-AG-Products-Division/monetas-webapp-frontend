@@ -28,9 +28,9 @@ gulp.task('vet', function() {
     return gulp
         .src(config.alljs)
         .pipe($.if(args.verbose, $.print()))
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
-        .pipe($.jscs());
+        //.pipe($.jshint())
+        //.pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
+        //.pipe($.jscs());
 });
 
 /**

@@ -30,7 +30,7 @@
               ContactsService.edit(vm.contact);
           } else {
               ContactsService.add(vm.contact.name);
-          };
+          }
 
           $state.go('tab.contacts');
         }

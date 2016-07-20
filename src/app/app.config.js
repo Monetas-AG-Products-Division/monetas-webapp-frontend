@@ -31,11 +31,12 @@
         url: 'http://52.58.219.22'
     });
 
-    configure.$inject = ['$httpProvider'];
+    configure.$inject = ['$httpProvider','$ionicConfigProvider'];
 
-    function configure ($httpProvider) {
+    function configure ($httpProvider,$ionicConfigProvider) {
         // Add your configuration here
         $httpProvider.interceptors.push('authInterceptor');
+        $ionicConfigProvider.tabs.position('bottom');
     }
 
 })();

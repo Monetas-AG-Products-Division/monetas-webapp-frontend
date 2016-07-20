@@ -31,9 +31,9 @@
               vm.message = 'Error: Invalid username or password';
             });
 
-        };
+        }
 
         function activate() {
-        };
+        }
     }
 })();
