@@ -5,24 +5,34 @@
     .module('app.settings')
     .controller('SettingsController', SettingsController);
 
-    SettingsController.$inject = ['$state'];
+    SettingsController.$inject = ['$stateParams', '$state', '$http', '$window', 'BACKEND_CONFIG'];
 
     /* @ngInject */
-    function SettingsController($state) {
+    function SettingsController($stateParams, $state, $http, $window, BACKEND_CONFIG) {
         var vm = this;
-        vm.doSetPin = doSetPin;
-        vm.doBalance = doBalance;
+        vm.settings = $stateParams.settings || {};
+        console.log(vm.settings);
+        vm.doPin = doPin;
+        vm.doSetSettings = doSetSettings;
 
         activate();
 
         ////////////////
-        function doSetPin() {
-            $state.go('change_pin');
-        };
+        function doPin() {
+          console.log(vm.settings);
+          $state.go('change_pin', {settings: vm.settings});
+        }
 
-        function doBalance() {
-            console.log(123)
-            $state.go('tab-view.balance');
+        function doSetSettings() {
+            $http
+            .put(BACKEND_CONFIG.url + '/api/users', {info: vm.settings })
+            .success(function (data, status, headers, config) {
+                $state.go('tab.balance');
+            })
+            .error(function (data, status, headers, config) {
+                // Handle login errors here
+                alert('Something happend wrong :(');
+            });
         };
 
         function activate() {

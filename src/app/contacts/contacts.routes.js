@@ -10,19 +10,27 @@
     function routes($stateProvider) {
         $stateProvider
 
-        .state('contacts', {
+        .state('page.contacts', {
             url: '/contacts',
-            templateUrl: 'app/contacts/contacts.html',
-            controller: 'ContactsController as vm'
+            views: {
+                'content': {
+                    templateUrl: 'app/contacts/contacts.html',
+                    controller: 'ContactsController as vm'
+                }
+            }
         })
 
-        .state('contact-details', {
+        .state('page.contact-details', {
             url: '/contact-details',
             params: {
               contact: null
             },
-            templateUrl: 'app/contacts/contact-details.html',
-            controller: 'ContactDetailsController as vm'
+            views: {
+                'content': {
+                    templateUrl: 'app/contacts/contact-details.html',
+                    controller: 'ContactDetailsController as vm'
+                }
+            }
         });
 
     }

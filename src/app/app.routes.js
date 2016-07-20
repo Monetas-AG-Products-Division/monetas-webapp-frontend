@@ -13,17 +13,16 @@
         // Set up the various states which the app can be in.
         // Each state's controller can be found in controllers.js
         $stateProvider
-        // setup an abstract state for the tabs directive
         .state('tab', {
             url: '/tab',
             abstract: true,
-            templateUrl: 'app/layout/tabs.html'
+            templateUrl: 'app/layout/tabs-view.html'
         })
 
-        .state('tab-view', {
-            url: '/tab-view',
+        .state('page', {
+            url: '/page',
             abstract: true,
-            templateUrl: 'app/layout/tabs-view.html'
+            templateUrl: 'app/layout/without-tabs-view.html'
         })
         // Each tab has its own nav history stack which is defined in the corresponding module.
 

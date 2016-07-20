@@ -3,12 +3,12 @@
 
     angular
     .module('app.contacts')
-    .factory('ContactService', contactService);
+    .factory('ContactsService', contactsService);
 
-    contactService.$inject = ['$http','BACKEND_CONFIG'];
+    contactsService.$inject = ['$http','BACKEND_CONFIG'];
 
     /* @ngInject */
-    function contactService($http, BACKEND_CONFIG) {
+    function contactsService($http, BACKEND_CONFIG) {
         var service = {
             getAll: getAll,
             remove: remove,

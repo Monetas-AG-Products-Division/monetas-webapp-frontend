@@ -19,12 +19,14 @@
 
 
         function activate() {
-            vm.contacts = ContactsService.all();
+            ContactsService.getAll(function(data) {
+                vm.contacts = data.result || [];
 
-            /* generate abbrs for contact names */
-            vm.contacts.forEach(function(item, key) {
-              console.log(vm.contacts[key]);
-              vm.contacts[key].abbr = item.name.match(/\b\w/g).join('');
+                /* generate abbrs for contact names */
+                vm.contacts.forEach(function(item, key) {
+                  console.log(vm.contacts[key]);
+                  vm.contacts[key].abbr = item.name.match(/\b\w/g).join('');
+                });
             });
         }
 

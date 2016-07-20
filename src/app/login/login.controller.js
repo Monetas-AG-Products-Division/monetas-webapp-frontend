@@ -12,7 +12,6 @@
         var vm = this;
         vm.user = {};
         vm.doLogIn = doLogIn;
-        console.log(BACKEND_CONFIG);
 
         activate();
 
@@ -22,14 +21,14 @@
             .post(BACKEND_CONFIG.url + '/auth/login', vm.user)
             .success(function (data, status, headers, config) {
               $window.sessionStorage.token = data.token;
-              $state.go('tab-view.balance');
+              $state.go('tab.balance');
             })
             .error(function (data, status, headers, config) {
               // Erase the token if the user fails to log in
               delete $window.sessionStorage.token;
 
               // Handle login errors here
-              vm.message = 'Error: Invalid user or password';
+              vm.message = 'Error: Invalid username or password';
             });
 
         };

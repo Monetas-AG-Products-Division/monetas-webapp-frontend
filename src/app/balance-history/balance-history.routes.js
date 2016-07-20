@@ -10,10 +10,14 @@
     function routes($stateProvider) {
         $stateProvider
 
-        .state('balance-history', {
+        .state('page.balance-history', {
             url: '/balance-history',
-            templateUrl: 'app/balance-history/balance-history.html',
-            controller: 'BalanceHistoryController as vm'
+            views: {
+                'content': {
+                    templateUrl: 'app/balance-history/balance-history.html',
+                    controller: 'BalanceHistoryController as vm'
+                }
+            }
         });
     }
 })();

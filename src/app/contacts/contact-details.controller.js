@@ -11,7 +11,6 @@
     function ContactDetailsController($stateParams, ContactsService, $state) {
         var vm = this;
         vm.doSave = doSave;
-        console.log($stateParams.contact);
         var data = $stateParams.contact || { name: ''};
         if (!data.id) {
             vm.contact = data;
@@ -33,7 +32,7 @@
               ContactsService.add(vm.contact.name);
           };
 
-          $state.go('tab-view.contacts');
+          $state.go('tab.contacts');
         }
     }
 })();

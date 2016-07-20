@@ -15,7 +15,6 @@
           will be replaced by model factory in next release
         */
         ProfileService.getBalance(function(data) {
-            console.log(data);
             vm.balance = data.result;
         });
 

@@ -11,7 +11,9 @@
     function SendController($state, $ionicTabsDelegate, ContactsService, BalanceHistoryService, $ionicPopup) {
         var vm = this;
         vm.doSend = doSend;
-        vm.contacts = ContactsService.all();
+        ContactsService.getAll(function(data) {
+          vm.contacts = data.result || [];
+        });
         vm.payment = {};
 
         activate();
@@ -35,7 +37,7 @@
             });
 
             alertPopup.then(function(res) {
-                $state.go('balance-history');
+                $state.go('page.balance-history');
             });
 
         }

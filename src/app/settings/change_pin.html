@@ -14,7 +14,7 @@
           <div class="list">
             <label class="item item-input">
               <div class="input-label">PIN</div>
-              <input type="password" name="pin" ng-model="user.pin" required>
+              <input type="password" name="pin" ng-model="vm.settings.pin" required>
             </label>
           </div>
         </div>
@@ -22,7 +22,7 @@
     </ion-content>
     <div class="footer-bar-custom">
       <div class="item-center">
-        <button type="submit" class="button button-block button-assertive" ng-click="vm.doBalance()" ng-disabled="settings_form.$invalid">
+        <button type="submit" class="button button-block button-assertive" ng-click="vm.doSetSettings()" ng-disabled="settings_form.$invalid">
         I HAVE SECURED THE PIN
         </button>
       </div>

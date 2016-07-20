@@ -10,10 +10,14 @@
     function routes($stateProvider) {
         $stateProvider
 
-        .state('contact-information', {
+        .state('page.contact-information', {
             url: '/contact-information',
-            templateUrl: 'app/contact-information/contact-information.html',
-            controller: 'ContactInformationController as vm'
+            views: {
+                'content': {
+                    templateUrl: 'app/contact-information/contact-information.html',
+                    controller: 'ContactInformationController as vm'
+                }
+            }
         });
     }
 })();

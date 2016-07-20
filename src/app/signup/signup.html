@@ -21,13 +21,14 @@
     </div>
     <div class="row form-wrapper">
       <div class="col">
+        <span class="assertive text-center">{{vm.message}}</span>
         <form name="signup_form" class="" novalidate>
           <div class="form-fields-outer list list-inset">
             <label class="item item-input">
-              <input type="text" placeholder="Usernmae" name="username" ng-model="user.username" required>
+              <input type="text" placeholder="Usernmae" name="username" ng-model="vm.user.username" required>
             </label>
             <label class="item item-input" show-hide-container>
-              <input type="password" placeholder="Password" name="password" ng-model="user.password" required show-hide-input>
+              <input type="password" placeholder="Password" name="password" ng-model="vm.user.password" required show-hide-input>
             </label>
             <button type="submit" class="sign-up button button-block" ng-click="vm.doSignUp()" ng-disabled="signup_form.$invalid">
               Sign Up

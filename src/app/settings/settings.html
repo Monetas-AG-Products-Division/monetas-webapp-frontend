@@ -10,11 +10,11 @@
     		  <div class="list">
             <label class="item item-input">
               <div class="input-label">Display Name</div>
-              <input type="text" name="name" ng-model="user.name" required>
+              <input type="text" name="name" ng-model="vm.settings.name" required>
             </label>
       			<label class="item item-input item-select">
       				<div class="input-label">Default currency</div>
-          		<select>
+          		<select ng-model="vm.settings.currency">
             		<option>USD</option>
             		<option>EURO</option>
           		</select>
@@ -25,7 +25,7 @@
     </ion-content>
     <div class="footer-bar-custom">
       <div class="item-center">
-        <button type="submit" class="button button-block button-assertive" ng-click="vm.doSetPin()" ng-disabled="settings_form.$invalid">
+        <button type="submit" class="button button-block button-assertive" ng-click="vm.doPin()" ng-disabled="settings_form.$invalid">
         CONTINUE
         </button>
       </div>

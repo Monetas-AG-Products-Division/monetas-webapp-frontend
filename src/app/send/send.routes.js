@@ -10,10 +10,14 @@
     function routes($stateProvider) {
         $stateProvider
 
-        .state('send', {
+        .state('page.send', {
             url: '/send',
-            templateUrl: 'app/send/send.html',
-            controller: 'SendController as vm'
+            views: {
+                'content': {
+                    templateUrl: 'app/send/send.html',
+                    controller: 'SendController as vm'
+                }
+            }
         });
     }
 })();

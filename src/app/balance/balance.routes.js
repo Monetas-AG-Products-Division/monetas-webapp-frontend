@@ -10,10 +10,10 @@
     function routes($stateProvider) {
         $stateProvider
 
-        .state('tab-view.balance', {
+        .state('tab.balance', {
             url: '/balance',
             views: {
-                'menuContent': {
+                'content': {
                     templateUrl: 'app/balance/balance.html',
                     controller: 'BalanceController as vm'
                 }
