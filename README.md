@@ -5,6 +5,8 @@ A beautiful, elegant and simple to use Monetas wallet interface that showcases n
 
 ![webapp-screenshot](https://cloud.githubusercontent.com/assets/18722686/17404559/67d06712-5a5c-11e6-9681-b14aa34fc070.png)
 
+Hosted demo: http://52.29.228.126:8100/#/dash
+
 ### What's new in version 1.0.0
 - Send and receive any asset, whether it's Swiss Francs, Bitcoins, or company stock
 - Instantly exchange any asset for any other asset
