@@ -27,8 +27,21 @@
         function edit(data, cb) {
             $http.put(BACKEND_CONFIG.url + '/api/users', data)
             .success(function (data, status, headers, config) {
+                console.log(data);
                 cb(data);
             });
         }
+
+        function getUnits() {
+            /*
+              $http.get(BACKEND_CONFIG.url + '/api/users/balance ')
+              .success(function (data, status, headers, config) {
+                  cb(data);
+              });
+            */
+            var units = JSON.parse($window.sessionStorage.profile);
+            return units;
+        }
+
     }
 })();

@@ -5,6 +5,7 @@
     .module('app', [
         /* Shared modules */
         'ionic',
+        'ngCordova',
         'ja.qr',
         'ionic-letter-avatar',
         'ionic-modal-select',
@@ -20,6 +21,8 @@
         'app.balance-history',
         'app.contact-information',
         'app.contacts',
-        'app.send'
+        'app.send',
+        'app.scan',
+        'app.charge'
     ]);
 })();

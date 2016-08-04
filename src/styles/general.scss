@@ -3,6 +3,27 @@
 	width: 100% !important;
 	height: 100% !important;
 }
+
+.info-line {
+  padding-bottom: 10px;
+  h3 {
+    margin-top: 0px;
+  }
+}
+
+.input-50 {
+  > input {
+    border: 12px solid $assertive !important;
+    padding-left: 4px;
+    height: 29px;
+    background: transparent;
+    line-height: 18px;
+    // you should add the following:
+    box-sizing: border-box; 
+    width: 50%;
+  }  
+}
+
 .dashboard .scroll {
 	display: table-cell;
 	vertical-align: middle;

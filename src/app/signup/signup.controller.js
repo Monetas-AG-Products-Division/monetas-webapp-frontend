@@ -21,6 +21,7 @@
             .post(BACKEND_CONFIG.url + '/auth/signup', vm.user)
             .success(function (data, status, headers, config) {
                 $window.sessionStorage.token = data.token;
+                $window.sessionStorage.profile = JSON.stringify(data.profile);
                 $state.go('settings');
             })
             .error(function (data, status, headers, config) {

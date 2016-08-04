@@ -21,6 +21,7 @@
             .post(BACKEND_CONFIG.url + '/auth/login', vm.user)
             .success(function (data, status, headers, config) {
               $window.sessionStorage.token = data.token;
+              $window.sessionStorage.profile = JSON.stringify(data.profile);
               $state.go('tab.balance');
             })
             .error(function (data, status, headers, config) {

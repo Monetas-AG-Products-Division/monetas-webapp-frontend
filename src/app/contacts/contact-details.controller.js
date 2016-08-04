@@ -29,10 +29,10 @@
           if (vm.contact.id >= 0) {
               ContactsService.edit(vm.contact);
           } else {
-              ContactsService.add(vm.contact.name);
+              ContactsService.add({id: new Date().getTime(), name: vm.contact.name});
           }
 
-          $state.go('tab.contacts');
+          $state.go('page.contacts');
         }
     }
 })();

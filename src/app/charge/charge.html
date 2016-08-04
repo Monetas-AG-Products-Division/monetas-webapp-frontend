@@ -1,0 +1,36 @@
+<ion-view class="auth-view" view-title="Charge">
+    <ion-content class="padding">
+      <div class="row form-wrapper">
+        <div class="col">
+          <div class="list">
+            <label class="item item-input">
+              <div class="input-label">Amount to charge</div>
+              <input type="text" name="amount" ng-model="vm.payment.amount" required>
+            </label>
+            <label class="item item-input item-select">
+              <div class="input-label">Currency</div>
+              <select ng-model="vm.payment.currency">
+                <option ng-selected="{{unit.id == vm.payment.currency}}"
+                        ng-repeat="unit in vm.units"
+                        value="{{unit.id}}">
+                  {{unit.name}}
+                </option>
+              </select>
+            </label>
+          </div>
+          <div class="dark">
+            Total received: {{vm.getCurrencyName(vm.payment.currency)}} {{vm.payment.amount - vm.payment.fee}}
+            <br/>
+            Fee: {{vm.getCurrencyName(vm.payment.currency)}} {{vm.payment.amount - vm.payment.fee}}
+          </div>
+        </div>
+      </div>
+    </ion-content>
+    <div class="footer-bar-custom">
+      <div class="item-center">
+        <button type="submit" class="button button-block button-assertive"  ui-sref="page.render-qr-bill({payment: vm.payment})">
+        CHARGE
+        </button>
+      </div>
+    </div>
+</ion-view>

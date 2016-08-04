@@ -28,7 +28,7 @@
     .module('app')
     .config(configure)
     .constant('BACKEND_CONFIG', {
-        url: 'http://52.58.219.22'
+        url: 'http://52.58.143.187'
     });
 
     configure.$inject = ['$httpProvider','$ionicConfigProvider'];

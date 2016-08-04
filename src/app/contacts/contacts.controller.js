@@ -20,6 +20,7 @@
 
         function activate() {
             ContactsService.getAll(function(data) {
+              console.log(data);
                 vm.contacts = data.result || [];
 
                 /* generate abbrs for contact names */

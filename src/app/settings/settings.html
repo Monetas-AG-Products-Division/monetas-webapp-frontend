@@ -15,8 +15,11 @@
       			<label class="item item-input item-select">
       				<div class="input-label">Default currency</div>
           		<select ng-model="vm.settings.currency">
-            		<option>USD</option>
-            		<option>EURO</option>
+            		<option ng-selected="{{unit.id == vm.settings.currency}}"
+                        ng-repeat="unit in vm.units"
+                        value="{{unit.id}}">
+                  {{unit.name}}
+                </option>
           		</select>
         		</label>
           </div>

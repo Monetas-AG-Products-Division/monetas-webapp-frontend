@@ -5,13 +5,13 @@
     .module('app.settings')
     .controller('SettingsController', SettingsController);
 
-    SettingsController.$inject = ['$stateParams', '$state', '$http', '$window', 'BACKEND_CONFIG'];
+    SettingsController.$inject = ['$stateParams', '$state', 'ProfileService', '$window', 'BACKEND_CONFIG'];
 
     /* @ngInject */
-    function SettingsController($stateParams, $state, $http, $window, BACKEND_CONFIG) {
+    function SettingsController($stateParams, $state, ProfileService, $window, BACKEND_CONFIG) {
         var vm = this;
+        vm.units = JSON.parse($window.sessionStorage.profile).units;
         vm.settings = $stateParams.settings || {};
-        console.log(vm.settings);
         vm.doPin = doPin;
         vm.doSetSettings = doSetSettings;
 
@@ -19,19 +19,15 @@
 
         ////////////////
         function doPin() {
-          console.log(vm.settings);
-          $state.go('change_pin', {settings: vm.settings});
+            console.log(vm.settings);
+            $state.go('change_pin', {settings: vm.settings});
         }
 
         function doSetSettings() {
-            $http
-            .put(BACKEND_CONFIG.url + '/api/users', {info: vm.settings })
-            .success(function (data, status, headers, config) {
+            ProfileService.edit({info: vm.settings }, function(data) {
+                $window.sessionStorage.token = data.token;
+                $window.sessionStorage.profile = JSON.stringify(data.profile);
                 $state.go('tab.balance');
-            })
-            .error(function (data, status, headers, config) {
-                // Handle login errors here
-                console.log('Something happend wrong :(');
             });
         }
 

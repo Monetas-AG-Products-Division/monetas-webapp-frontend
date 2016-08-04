@@ -1,7 +1,7 @@
 <ion-view view-title="Contacts" cache-view="false">
     <ion-content>
         <ion-list>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="contact in vm.contacts | orderBy : '+name' " type="item-text-wrap" ui-sref="contact-details({contact: contact})">
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="contact in vm.contacts | orderBy : '+name' " type="item-text-wrap" ui-sref="page.contact-details({contact: contact})">
                 <ionic-letter-avatar data="{{contact.abbr}}"shape="round" charcount="2"></ionic-letter-avatar>
                 <h2 class="item-text-center">{{contact.name}}</h2>
                 <i class="icon ion-chevron-right icon-accessory"></i>
@@ -12,7 +12,7 @@
             </ion-item>
         </ion-list>
     </ion-content>
-    <a class="button button-float" ui-sref="contact-details({contact: {name: ''} })">
+    <a class="button button-float" ui-sref="page.contact-details({contact: {name: ''} })">
         <i class="icon ion-plus"></i>
     </a>
 </ion-view>
