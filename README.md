@@ -3,6 +3,8 @@
 
 A beautiful, elegant and simple to use Monetas wallet interface that showcases nearly all of the Monetas platform's current features. Experience the Monetas platform using any web browser, and for an optimized mobile experience download the iOS or Android app.
 
+![webapp-screenshot](https://cloud.githubusercontent.com/assets/18722686/17404559/67d06712-5a5c-11e6-9681-b14aa34fc070.png)
+
 ### What's new in version 1.0.0
 - Send and receive any asset, whether it's Swiss Francs, Bitcoins, or company stock
 - Instantly exchange any asset for any other asset
