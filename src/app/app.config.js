@@ -14,10 +14,12 @@
                 return config;
             },
             response: function (response) {
+                console.log(response);
                 if (response.status === 401) {
                     delete $window.sessionStorage.token;
                     $injector.get('$state').go('login');
                     // handle the case where the user is not authenticated
+                    return $q.reject(response);
                 }
                 return response || $q.when(response);
             }

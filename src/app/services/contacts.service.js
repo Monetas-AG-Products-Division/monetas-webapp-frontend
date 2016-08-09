@@ -11,6 +11,7 @@
     function contactsService($http, BACKEND_CONFIG) {
         var service = {
             getAll: getAll,
+            getById: getById,
             remove: remove,
             add: add
         };
@@ -36,33 +37,35 @@
         ////////////////
 
         function getAll(cb) {
-          /*
             $http.get(BACKEND_CONFIG.url + '/api/contacts')
             .success(function (data, status, headers, config) {
                 cb(data);
             });
-          */
-          cb(contacts);
+            //cb(contacts);
+        }
+
+        function getById(id, cb) {
+            $http.get(BACKEND_CONFIG.url + '/api/contacts/'+id)
+            .success(function (data, status, headers, config) {
+                cb(data);
+            });
+            //cb(contacts);
         }
 
         function add(data, cb) {
-          contacts.result.push(data);
-          /*
+          //contacts.result.push(data);
             $http.post(BACKEND_CONFIG.url + '/api/contacts', data)
             .success(function (data, status, headers, config) {
                 cb(data);
             });
-          */
         }
 
         function remove(item, cb) {
-          console.log(item);
-          /*
+            //console.log(item);
             $http.delete(BACKEND_CONFIG.url + '/api/contacts/'+item._id)
             .success(function (data, status, headers, config) {
                 cb(data);
             });
-          */
         }
 
     }

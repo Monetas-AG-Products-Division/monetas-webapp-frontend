@@ -37,6 +37,7 @@
     function transferService($http, BACKEND_CONFIG) {
         var service = {
             getAll: getAll,
+            getById: getById,
             remove: remove,
             add: add
         };
@@ -51,10 +52,27 @@
             });
         }
 
-        function add(data, cb) {
-            $http.post(BACKEND_CONFIG.url + '/api/transfers', data)
+        function getById(id, cb) {
+
+            $http({
+                url: BACKEND_CONFIG.url + '/api/transfers/'+id, 
+                method: "GET",
+                withCredentials: true
+            })
             .success(function (data, status, headers, config) {
                 cb(data);
+            })
+            error(function(data, status, headers, config) { 
+                console.log(data, status, headers);
+                // called asynchronously if an error occurs // or server returns response with an error status. 
+            });
+        }
+
+        function add(data, cb) {
+            $http.post(BACKEND_CONFIG.url + '/api/transfers', data)
+            .success(function (result, status, headers, config) {
+                console.log(result);
+                cb(result);
             });
 
             /*

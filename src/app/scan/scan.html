@@ -5,11 +5,17 @@
           <div class="list">
             <div class="info-line">
               <h4>Recipient</h4>
-              <h3 class="assertive">{{vm.payment.contact.name}}</h3>
+              <h3 class="assertive">{{vm.payment.sender.info.name}} 
+                  <small ng-show="vm.isNewContact" ng-click="vm.AddSenderToContact()">[ADD TO CONTACT LIST]</small>
+              </h3>
             </div>
             <div class="info-line">
-              <h4>Pay, USD</h4>
+              <h4>Pay, {{vm.payment.unitName}}</h4>
               <h3 class="assertive">{{vm.payment.amount}}</h3>
+            </div>
+            <div class="info-line">
+              <h4>Message</h4>
+              <h3 class="assertive">{{vm.payment.message}}</h3>
             </div>
           </div>
         </div>

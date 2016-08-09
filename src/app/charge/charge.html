@@ -9,8 +9,8 @@
             </label>
             <label class="item item-input item-select">
               <div class="input-label">Currency</div>
-              <select ng-model="vm.payment.currency">
-                <option ng-selected="{{unit.id == vm.payment.currency}}"
+              <select ng-model="vm.payment.unit">
+                <option ng-selected="{{unit.id == vm.payment.unit}}"
                         ng-repeat="unit in vm.units"
                         value="{{unit.id}}">
                   {{unit.name}}

@@ -5,12 +5,13 @@
     .module('app.scan')
     .controller('ScanController', ScanController);
 
-    ScanController.$inject = ['$state', 'ContactsService', '$cordovaBarcodeScanner'];
+    ScanController.$inject = ['$state', '$cordovaBarcodeScanner', 'TransferService', 'ContactsService'];
 
     /* @ngInject */
-    function ScanController($state, ContactsService, $cordovaBarcodeScanner) {
+    function ScanController($state, $cordovaBarcodeScanner, TransferService, ContactsService) {
         var vm = this;
         vm.payment = {};
+        vm.AddSenderToContact = AddSenderToContact;
         activate();
         scanBarcode();
         ////////////////
@@ -41,9 +42,31 @@
             */
             console.log(req);
             console.log(atob(parseUrlQueryParams(req).req));
-            vm.payment = JSON.parse(atob(parseUrlQueryParams(req).req));
-            console.log(vm.payment)
+            vm.paymentId = atob(parseUrlQueryParams(req).req);
+            showPaymentDetails(vm.paymentId);
         }
+
+        function showPaymentDetails(id) {
+            TransferService.getById(id, function(data) {
+                console.log(data);
+                vm.payment = data.result;
+                // check if sender exists in contact list
+                ContactsService.getById(vm.payment.sender._id, function(contact) {
+                    console.log(contact);
+                    if (!contact.result) {
+                        vm.isNewContact = true;
+                    };
+                });             
+            });
+        };
+
+        function AddSenderToContact() {
+            console.log(vm.payment.sender);
+            ContactsService.add({user:vm.payment.sender._id}, function(contact) {
+                console.log(contact);
+                vm.isNewContact = false;
+            });             
+        };
 
         function parseUrlQueryParams(uri) {
             if (!uri) return false;
