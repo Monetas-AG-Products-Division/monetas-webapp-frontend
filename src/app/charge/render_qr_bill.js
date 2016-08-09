@@ -12,10 +12,6 @@
         var profile = JSON.parse($window.sessionStorage.profile);
         var vm = this;
         vm.payment = $stateParams.payment;
-        vm.payment.contact = {
-            name: profile.info.name,
-            nym_id: profile.nym_id
-        };
 
         activate();
 
@@ -26,17 +22,12 @@
 
         function doRenderQR(data) {
             /* 
-              goatd://pay?req=base64(jsonObject)
-              jsonObject = {
-                  amount: 120,
-                  fee: 1.2,
-                  unit: ...,
-                  descr: ...,
-                  contact: ...
-              }
+              goatd://pay?req=base64(_id)
             */
-            vm.qrcodeString = 'goatd://pay?req=' + btoa(JSON.stringify(data));
-            console.log(btoa(JSON.stringify(data)));
+            TransferService.add(data, function(result) {
+              console.log(result);
+              vm.qrcodeString = 'goatd://pay?req=' + btoa(result._id);
+            });
         }
     }
 })();

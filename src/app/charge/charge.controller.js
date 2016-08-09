@@ -5,10 +5,10 @@
     .module('app.charge')
     .controller('ChargeController', ChargeController);
 
-    ChargeController.$inject = ['$state','$window'];
+    ChargeController.$inject = ['$state','$window','TransferService'];
 
     /* @ngInject */
-    function ChargeController($state, $window) {
+    function ChargeController($state, $window, TransferService) {
         var profile = JSON.parse($window.sessionStorage.profile);
         var vm = this;
         vm.payment = {};

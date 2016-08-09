@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-    .module('app.contacts')
+    .module('app')
     .factory('ContactsService', contactsService);
 
     contactsService.$inject = ['$http','BACKEND_CONFIG'];

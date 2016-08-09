@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-    .module('app.settings')
+    .module('app')
     .factory('ProfileService', profileService);
 
     profileService.$inject = ['$http','BACKEND_CONFIG'];

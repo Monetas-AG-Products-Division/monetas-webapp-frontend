@@ -17,6 +17,10 @@
                 </option>
               </select>
             </label>
+            <label class="item item-input">
+              <div class="input-label">Message</div>
+              <input type="text" name="message" ng-model="vm.payment.message" maxlength="150">
+            </label>
           </div>
           <div class="dark">
             Total received: {{vm.getCurrencyName(vm.payment.currency)}} {{vm.payment.amount - vm.payment.fee}}
