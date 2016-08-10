@@ -48,5 +48,10 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-whitelist"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    {
+      "platform": "android",
+      "locator": "browser"
+    }
+  ]
 }

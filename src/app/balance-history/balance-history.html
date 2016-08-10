@@ -5,11 +5,12 @@
                 <ionic-letter-avatar data="-" shape="round" charcount="1"></ionic-letter-avatar>
                 <div class="row">
                     <div class="col col-75">
-                        <h2>{{item.recipient.info.name}}</h2>
+                        <h2>{{item.sender.info.name}}</h2>
                         <p>{{item.createdAt | date}}</p>
                     </div>
-                    <div class="col text-right  col-50">
-                        <h2>{{item.currency}} {{item.amount}}</h2>
+                    <div class="col text-right  col-40">
+                        <h2 class="assertive" ng-if="item.type =='outcome'">- {{item.unitName | limitTo: 3}} {{item.amount}}</h2>
+                        <h2 class="positive" ng-if="item.type =='income'">+ {{item.unitName | limitTo: 3}} {{item.amount}}</h2>
                         <p>{{item.status}}</p>
                     </div>
                 </div>

@@ -14,7 +14,6 @@
                 return config;
             },
             response: function (response) {
-                console.log(response);
                 if (response.status === 401) {
                     delete $window.sessionStorage.token;
                     $injector.get('$state').go('login');
