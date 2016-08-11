@@ -27,7 +27,7 @@
               goatd://pay?req=base64(_id)
             */
             console.log(data);
-            TransferService.add(data, function(result) {
+            TransferService.request(data, function(result) {
               vm.qrcodeString = 'goatd://pay?req=' + btoa(result._id);
               console.log(btoa(result._id));                
             });

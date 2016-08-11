@@ -6,15 +6,29 @@
           <div class="list">
             <label class="item item-input" modal-select ng-model="vm.payment.contact" options="vm.contacts" options-expression="option in vm.contacts | orderBy:'name'" modal-title="Select a Recipient" has-search="true">
               <div class="input-label">Recipient</div>
-              <span>{{vm.payment.contact.name || 'click to select'}}</span>
+              <span>{{vm.payment.contact.user.info.name || 'click to select'}}</span>
               <div class="option">
-                  {{option.name}}
+                  {{option.user.info.name}}
               </div>
               <input type="hidden" name="name" ng-model="vm.payment.contact" required>
             </label>
             <label class="item item-input">
-              <div class="input-label">Pay, USD</div>
-              <input type="text" name="name" ng-model="vm.payment.amount" required>
+              <div class="input-label">Amount</div>
+              <input type="text" name="amount" ng-model="vm.payment.amount" required>
+            </label>
+            <label class="item item-input item-select">
+              <div class="input-label">Currency</div>
+              <select ng-model="vm.payment.unit">
+                <option ng-selected="{{unit.id == vm.payment.unit}}"
+                        ng-repeat="unit in vm.units"
+                        value="{{unit.id}}">
+                  {{unit.name}}
+                </option>
+              </select>
+            </label>
+            <label class="item item-input">
+              <div class="input-label">Message</div>
+              <input type="text" name="message" ng-model="vm.payment.message" maxlength="150">
             </label>
           </div>
         </div>

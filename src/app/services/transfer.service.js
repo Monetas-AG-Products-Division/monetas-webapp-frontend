@@ -39,7 +39,8 @@
             getAll: getAll,
             getById: getById,
             remove: remove,
-            add: add
+            send: send,
+            request: request
         };
         return service;
 
@@ -53,7 +54,6 @@
         }
 
         function getById(id, cb) {
-
             $http({
                 url: BACKEND_CONFIG.url + '/api/transfers/'+id, 
                 method: "GET",
@@ -68,24 +68,20 @@
             });
         }
 
-        function add(data, cb) {
-            $http.post(BACKEND_CONFIG.url + '/api/transfers', data)
+        function send(data, cb) {
+            $http.post(BACKEND_CONFIG.url + '/api/transfers/outcome', data)
             .success(function (result, status, headers, config) {
                 console.log(result);
                 cb(result);
             });
+        }
 
-            /*
-            var _id = 0;
-            if (history.length > 0) {
-                _id = history[history.length - 1].id + 1;
-            };
-
-            data.id = _id;
-            data.createdAt = '17 July 2016';
-            data.status = 'completed';
-            history.push(data);
-            */
+        function request(data, cb) {
+            $http.post(BACKEND_CONFIG.url + '/api/transfers/income', data)
+            .success(function (result, status, headers, config) {
+                console.log(result);
+                cb(result);
+            });
         }
 
         function remove(item, cb) {

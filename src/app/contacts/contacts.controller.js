@@ -20,12 +20,10 @@
 
         function activate() {
             ContactsService.getAll(function(data) {
-              console.log(1111, data);
                 vm.contacts = [];
 
                 /* generate abbrs for contact names */
                 data.result.forEach(function(item, key) {
-                  console.log(vm.contacts[key]);
                   vm.contacts.push({
                     name: item.user.info.name,
                     abbr: item.user.info.name.match(/\b\w/g).join('')
