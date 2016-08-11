@@ -5,7 +5,13 @@ A beautiful, elegant and simple to use Monetas wallet interface that showcases n
 
 ![webapp-screenshot](https://cloud.githubusercontent.com/assets/18722686/17404559/67d06712-5a5c-11e6-9681-b14aa34fc070.png)
 
-Hosted demo: http://52.29.228.126:8100/#/dash
+
+
+### Proof of concept diagram 
+![setup-1 copy](https://cloud.githubusercontent.com/assets/18722686/17585344/778bbec2-5fbb-11e6-9df0-d57d9e5b0943.png)
+
+### GoatD interactions diagram
+![goatd interactions diagram](https://cloud.githubusercontent.com/assets/18722686/17585382/a45b48b4-5fbb-11e6-8c28-796c0a8ba1c3.png)
 
 ### What's new in version 1.0.0
 - Send and receive any asset, whether it's Swiss Francs, Bitcoins, or company stock
