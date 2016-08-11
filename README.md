@@ -1,7 +1,10 @@
 ![c_monetas_logo_rgb](https://cloud.githubusercontent.com/assets/18722686/16418153/f4456e94-3d48-11e6-8443-fc0c885a4ee3.png)
 ## Your Monetas wallet, anywhere and anytime
 
-A beautiful, elegant and simple to use Monetas wallet interface that showcases nearly all of the Monetas platform's current features. Experience the Monetas platform using any web browser, and for an optimized mobile experience download the iOS or Android app.
+A beautiful, elegant and simple to use Monetas wallet interface that showcases nearly all of the Monetas platform's current features. Experience the Monetas platform using any web browser, and for an optimized mobile experience download the iOS or Android app. This app is the interface to your [GoatD wallet](https://goatd.monetas.net/), which we assume you will have running on the [web app backend](https://github.com/Monetas-Products-Division/monetas-webapp-backend). 
+
+<br><br>
+
 
 ![webapp-screenshot](https://cloud.githubusercontent.com/assets/18722686/17404559/67d06712-5a5c-11e6-9681-b14aa34fc070.png)
 
