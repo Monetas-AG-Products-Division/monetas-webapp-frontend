@@ -29,7 +29,7 @@
     .module('app')
     .config(configure)
     .constant('BACKEND_CONFIG', {
-        url: 'http://52.58.143.187' //'http://localhost:3000'//
+        url: 'http://52.28.99.96' //'http://localhost:3000'//'http://52.28.99.96' //
     });
 
     configure.$inject = ['$httpProvider','$ionicConfigProvider'];

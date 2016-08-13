@@ -5,13 +5,15 @@
     .module('app.scan')
     .controller('ScanController', ScanController);
 
-    ScanController.$inject = ['$state', '$cordovaBarcodeScanner', 'TransferService', 'ContactsService'];
+    ScanController.$inject = ['$state', '$cordovaBarcodeScanner', 'TransferService', 'ContactsService', '$ionicPopup'];
 
     /* @ngInject */
-    function ScanController($state, $cordovaBarcodeScanner, TransferService, ContactsService) {
+    function ScanController($state, $cordovaBarcodeScanner, TransferService, ContactsService, $ionicPopup) {
         var vm = this;
         vm.payment = {};
-        vm.AddSenderToContact = AddSenderToContact;
+        vm.addSenderToContact = addSenderToContact;
+        vm.doSend = doSend;
+
         activate();
         scanBarcode();
         ////////////////
@@ -51,7 +53,7 @@
                 console.log(data);
                 vm.payment = data.result;
                 // check if sender exists in contact list
-                ContactsService.getById(vm.payment.sender._id, function(contact) {
+                ContactsService.getById(vm.payment.recipient._id, function(contact) {
                     console.log(contact);
                     if (!contact.result) {
                         vm.isNewContact = true;
@@ -60,12 +62,26 @@
             });
         };
 
-        function AddSenderToContact() {
+        function addSenderToContact() {
             console.log(vm.payment.sender);
             ContactsService.add({user:vm.payment.sender._id}, function(contact) {
                 console.log(contact);
                 vm.isNewContact = false;
             });             
+        };
+
+        function doSend() {
+            TransferService.complete(vm.paymentId, function(data) {
+                console.log(data);
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Congratulations',
+                    template: 'Payment were completed'
+                });
+
+                alertPopup.then(function(res) {
+                    $state.go('page.balance-history');
+                });
+            });
         };
 
         function parseUrlQueryParams(uri) {

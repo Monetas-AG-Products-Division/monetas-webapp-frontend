@@ -36,7 +36,7 @@
             };
 
             TransferService.send(data, function(result) {
-                console.log(result);                
+                console.log(result);
                 var alertPopup = $ionicPopup.alert({
                     title: 'Congratulations',
                     template: 'Payment were sent'

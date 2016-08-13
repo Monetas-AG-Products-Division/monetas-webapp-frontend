@@ -1,7 +1,7 @@
 <ion-view view-title="Your Contact Information">
     <ion-content class="padding dashboard">
         <div class="card top-50-minus">
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap" ng-if="vm.qrcodeString">
                 <qr text="vm.qrcodeString"></qr>
             </div>
         </div>

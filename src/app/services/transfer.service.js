@@ -40,7 +40,8 @@
             getById: getById,
             remove: remove,
             send: send,
-            request: request
+            request: request,
+            complete: complete
         };
         return service;
 
@@ -83,6 +84,15 @@
                 cb(result);
             });
         }
+
+        function complete(id, cb) {
+            $http.put(BACKEND_CONFIG.url + '/api/transfers/complete/'+id, {})
+            .success(function (result, status, headers, config) {
+                console.log(result);
+                cb(result);
+            });
+        }
+
 
         function remove(item, cb) {
             $http.delete(BACKEND_CONFIG.url + '/api/transfers/'+item._id)

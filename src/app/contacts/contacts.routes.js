@@ -31,7 +31,19 @@
                     controller: 'ContactDetailsController as vm'
                 }
             }
-        });
+        })
 
+        .state('page.contact-add', {
+            url: '/contact-add',
+            params: {
+              contact: null
+            },
+            views: {
+                'content': {
+                    templateUrl: 'app/contacts/contact-add.html',
+                    controller: 'ContactAddController as vm'
+                }
+            }
+        });
     }
 })();
