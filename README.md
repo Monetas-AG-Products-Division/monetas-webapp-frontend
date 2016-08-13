@@ -1,11 +1,11 @@
-![c_monetas_logo_rgb](https://cloud.githubusercontent.com/assets/18722686/16418153/f4456e94-3d48-11e6-8443-fc0c885a4ee3.png)
 ## Your Monetas wallet, anywhere and anytime
 
-A beautiful, elegant and simple to use Monetas wallet interface that showcases nearly all of the Monetas platform's current features. Experience the Monetas platform using any web browser, and for an optimized mobile experience download the iOS or Android app.
+A beautiful, elegant and simple to use Monetas wallet interface that showcases nearly all of the Monetas platform's current features. Experience the Monetas platform using any web browser, and for an optimized mobile experience download the iOS or Android app. This app is the interface to your [GoatD wallet](https://goatd.monetas.net/), which we assume you will have running on the [web app backend](https://github.com/Monetas-Products-Division/monetas-webapp-backend). 
+
+<br><br>
+
 
 ![webapp-screenshot](https://cloud.githubusercontent.com/assets/18722686/17404559/67d06712-5a5c-11e6-9681-b14aa34fc070.png)
-
-Hosted demo: http://52.29.228.126:8100/#/dash
 
 ### What's new in version 1.0.0
 - Send and receive any asset, whether it's Swiss Francs, Bitcoins, or company stock
@@ -155,3 +155,9 @@ A bunch of useful gulp tasks have been copied from the [HotTowel yeoman generato
     Copies the ionic fonts, copies images and runs `gulp optimize` to build the production code to the build folder.
 
 **NOTE:** This project contains a before_build hook for cordova which so that the gulp build task is run automatically when building with `cordova build [platfrom]` or `ionic build [platfrom]`
+
+### Proof of concept diagram 
+![setup-1 copy](https://cloud.githubusercontent.com/assets/18722686/17585344/778bbec2-5fbb-11e6-9df0-d57d9e5b0943.png)
+
+### GoatD interactions diagram
+![goatd interactions diagram](https://cloud.githubusercontent.com/assets/18722686/17585382/a45b48b4-5fbb-11e6-8c28-796c0a8ba1c3.png)
