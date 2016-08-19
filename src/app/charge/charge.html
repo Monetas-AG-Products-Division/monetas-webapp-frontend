@@ -5,11 +5,11 @@
           <div class="list">
             <label class="item item-input">
               <div class="input-label">Amount to charge</div>
-              <input type="text" name="amount" ng-model="vm.payment.amount" required>
+              <input type="text" name="amount" ng-model="vm.payment.amount" required ng-change="vm.showFees()">
             </label>
             <label class="item item-input item-select">
               <div class="input-label">Currency</div>
-              <select ng-model="vm.payment.unit">
+              <select ng-model="vm.payment.unit" ng-change="vm.showFees()">
                 <option ng-selected="{{unit.id == vm.payment.unit}}"
                         ng-repeat="unit in vm.units"
                         value="{{unit.id}}">
@@ -23,9 +23,9 @@
             </label>
           </div>
           <div class="dark">
-            Total received: {{vm.getCurrencyName(vm.payment.currency)}} {{vm.payment.amount - vm.payment.fee}}
+            Total received: {{vm.payment.amount - vm.payment.fee}} {{vm.getCurrencyName(vm.payment.unit)}}
             <br/>
-            Fee: {{vm.getCurrencyName(vm.payment.currency)}} {{vm.payment.amount - vm.payment.fee}}
+            Fee: {{vm.payment.fee || 0}} {{vm.getCurrencyName(vm.payment.unit)}}
           </div>
         </div>
       </div>

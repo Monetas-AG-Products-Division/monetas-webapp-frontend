@@ -14,6 +14,7 @@
         vm.payment = {};
         vm.units = profile.units;
         vm.getCurrencyName = getCurrencyName;
+        vm.showFees = showFees;
 
         activate();
 
@@ -32,6 +33,15 @@
           } else {
             return '';
           };
+        }
+
+        function showFees() {
+          if (!vm.payment.amount || !vm.payment.unit) return false;
+
+          TransferService.getFees({amount: vm.payment.amount, unit: vm.payment.unit}, function(result) {
+            vm.payment.fee = result.result;
+            console.log(result);                
+          });
         }
 
     }

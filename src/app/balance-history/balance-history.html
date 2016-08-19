@@ -2,8 +2,9 @@
     <ion-content>
         <ion-list>
             <ion-item class="item-remove-animate item-icon-left" ng-repeat="item in vm.history | orderBy : '+createdAt' " type="item-text-wrap">
-                <i class = "icon icon ion-ios-arrow-thin-down positive" ng-if="item.type =='income'"></i>
-                <i class = "icon icon ion-ios-arrow-thin-up assertive" ng-if="item.type =='outcome'"></i>
+                <i class = "icon icon ion-ios-arrow-thin-down positive" ng-if="item.type =='income' && item.status == 'completed'"></i>
+                <i class = "icon icon ion-ios-arrow-thin-up assertive" ng-if="item.type =='outcome' && item.status == 'completed'"></i>
+                <i class = "icon icon ion-ios-close-empty" ng-if="item.status != 'completed'"></i>
                 <div class="row">
                     <div class="col col-75">
                         <h2>{{item.sender.info.name || '-'}}</h2>

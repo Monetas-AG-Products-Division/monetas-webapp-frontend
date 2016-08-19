@@ -41,7 +41,8 @@
             remove: remove,
             send: send,
             request: request,
-            complete: complete
+            complete: complete,
+            getFees: getFees
         };
         return service;
 
@@ -106,6 +107,14 @@
                 history.splice(idx, 1);
             };
             */
+        }
+
+        function getFees(data, cb) {
+            $http.post(BACKEND_CONFIG.url + '/api/transfers/fees', data)
+            .success(function (result, status, headers, config) {
+                console.log(result);
+                cb(result);
+            });
         }
 
     }

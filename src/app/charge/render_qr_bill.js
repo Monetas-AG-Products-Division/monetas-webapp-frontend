@@ -13,7 +13,7 @@
         var vm = this;
         vm.payment = $stateParams.payment;
         vm.payment.sender = profile._id;
-        vm.payment.fee = 0;
+        vm.payment.fee = vm.payment.fee || 0;
 
         activate();
 
