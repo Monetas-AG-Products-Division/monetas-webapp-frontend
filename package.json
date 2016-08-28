@@ -49,9 +49,6 @@
     "cordova-plugin-whitelist"
   ],
   "cordovaPlatforms": [
-    {
-      "platform": "android",
-      "locator": "browser"
-    }
+    "android"
   ]
 }

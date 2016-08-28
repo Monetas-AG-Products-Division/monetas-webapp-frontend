@@ -8,13 +8,13 @@
       <div class="col">
         <h1 class="form-title">Create your account</h1>
         <h3 class="form-sub-title">Sign up with Social Network or Email</h3>
-        <div class="social-sign-up button-bar">
-          <a class="button icon ion-social-facebook button-positive"></a>
-          <a class="button icon ion-social-google button-calm"></a>
+        <div class="social-sign-up button-bar" ng-if="vm.isDevice">
+          <a class="button icon ion-social-facebook button-positive" ng-click="vm.facebookSignUp()"></a>
+          <a class="button icon ion-social-google button-calm" ng-click="vm.googleSignUp()"></a>
         </div>
       </div>
     </div>
-    <div class="row form-separator">
+    <div class="row form-separator" ng-if="vm.isDevice">
       <hr class="separator-line"/>
       <span class="separator-mark">OR</span>
       <hr class="separator-line"/>

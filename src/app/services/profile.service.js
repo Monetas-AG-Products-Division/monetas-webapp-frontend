@@ -42,6 +42,5 @@
             var units = JSON.parse($window.sessionStorage.profile);
             return units;
         }
-
     }
 })();

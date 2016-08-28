@@ -8,13 +8,13 @@
       <div class="col">
         <h1 class="form-title">Welcome back</h1>
         <h3 class="form-sub-title">Logn to your wallet</h3>
-        <div class="social-sign-up button-bar">
-          <a class="button icon ion-social-facebook button-positive"></a>
-          <a class="button icon ion-social-google button-calm"></a>
+        <div class="social-sign-up button-bar" ng-if="vm.isDevice">
+          <a class="button icon ion-social-facebook button-positive" ng-click="vm.facebookLogin()"></a>
+          <a class="button icon ion-social-google button-calm" ng-click="vm.googleLogin()"></a>
         </div>
       </div>
     </div>
-    <div class="row form-separator">
+    <div class="row form-separator" ng-if="vm.isDevice">
       <hr class="separator-line"/>
       <span class="separator-mark">OR</span>
       <hr class="separator-line"/>

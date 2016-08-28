@@ -6,6 +6,7 @@
         /* Shared modules */
         'ionic',
         'ngCordova',
+        'ngCordovaOauth',
         'ja.qr',
         'ionic-letter-avatar',
         'ionic-modal-select',
