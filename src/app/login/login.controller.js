@@ -5,10 +5,10 @@
     .module('app.login')
     .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$state', '$http', '$window', '$cordovaOauth', 'BACKEND_CONFIG', 'OAUTH_CONFIG'];
+    LoginController.$inject = ['$state', '$http', '$window', '$cordovaOauth', 'Facebook', 'BACKEND_CONFIG', 'OAUTH_CONFIG'];
 
     /* @ngInject */
-    function LoginController($state, $http, $window, $cordovaOauth, BACKEND_CONFIG, OAUTH_CONFIG) {
+    function LoginController($state, $http, $window, $cordovaOauth, Facebook, BACKEND_CONFIG, OAUTH_CONFIG) {
         var vm = this;
         vm.user = {};
         vm.doLogIn = doLogIn;
@@ -22,6 +22,11 @@
 
         ////////////////
         function facebookLogin() {
+            if (!vm.isDevice) {
+                facebookDesktopLogin();
+                return;
+            };
+
             $cordovaOauth.facebook(OAUTH_CONFIG.facebook.appId, ['email']).then(function(result) {
                 console.log(result);
                 $http.get(OAUTH_CONFIG.facebook.profileUrl, { params: { access_token: result.access_token, fields: 'id,name,email', format: 'json' }})
@@ -41,6 +46,13 @@
             }, function(error) {
                 console.log(error);
                 // error
+            });
+        }
+
+        function facebookDesktopLogin() {
+            Facebook.login(function(response) {
+                console.log(response);
+                // Do something with response.
             });
         }
 

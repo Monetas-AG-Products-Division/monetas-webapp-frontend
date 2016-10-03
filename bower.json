@@ -15,6 +15,7 @@
     "ionic-toast": "^0.4.0",
     "angular-model-factory": "^1.0.3",
     "ngCordova": "^0.1.27-alpha",
-    "ng-cordova-oauth": "^0.2.10"
+    "ng-cordova-oauth": "^0.2.10",
+    "angular-facebook": "^0.2.3"
   }
 }
